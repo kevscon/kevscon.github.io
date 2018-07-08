@@ -3,6 +3,8 @@ layout: post
 title: Battleground Counties in the 2016 Election
 ---
 
+<img src="/assets/images/batt_ground/county_map.png">
+
 ## Summary
 I decided to take a look at the 2016 election results by county and determine which counties were the most undecided in the country. I wanted to see if any demographic trends could be uncovered for these particular counties.
 
