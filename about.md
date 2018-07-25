@@ -1,15 +1,30 @@
 ---
 layout: page
 title: About
-permalink: /about/
 ---
 
-I have Bachelors and Masters degrees in Civil Engineering and nine years professional working experience in the structural engineering field. During that time, I have gained experience in both design and inspection of bridges. But it was data-related projects in the industry that I have found the most engaging and this was the driving force in my decision to make a career shift to data science. I plan to utilize the machine-learning skills I have recently developed, in combination with my previous technical experience, to provide data-based solutions to today’s challenges.
+<p class="message">
+  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
+</p>
 
-<!-- ### More Information
+In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
 
-A place to include any other types of information that you'd like to include about yourself.
+There are currently two themes built on Poole:
 
-### Contact me
+* [Hyde](http://hyde.getpoole.com)
+* [Lanyon](http://lanyon.getpoole.com)
 
-[email@domain.com](mailto:email@domain.com) -->
+Learn more and contribute on [GitHub](https://github.com/poole).
+
+## Setup
+
+Some fun facts about the setup of this project include:
+
+* Built for [Jekyll](http://jekyllrb.com)
+* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
+* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
+* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
+
+Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
+
+Thanks for reading!
