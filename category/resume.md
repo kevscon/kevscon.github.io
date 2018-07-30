@@ -3,6 +3,6 @@ layout: category
 title: Resume
 ---
 
-![Resume]({{ "/assets/images/resume.png" | absolute_url }})
+[PDF]({{ site.url }}/assets/resume.pdf)
 
-[PDF Download]({{ site.url }}/assets/resume.pdf)
+![Resume]({{ "/assets/images/resume.png" | absolute_url }})
