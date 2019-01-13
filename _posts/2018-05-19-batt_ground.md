@@ -38,14 +38,20 @@ The best Logistic Regression model used balanced weights and the best Random For
 
 ![]({{ "/assets/images/batt_ground/pre_rec.png" | absolute_url }})
 
-Random Forest outperformed Logistic Regression in terms of Precision-Recall trade-off. However, overall recall was significantly better with the Logistic Regression model as shown below and this model was selected for final analysis. About 77% of the "swing" counties were correctly identified using this model. Quite an improvement from the initial 0%.
+Random Forest outperformed Logistic Regression in terms of Precision-Recall trade-off. However, overall recall was significantly better with the Logistic Regression model as shown below and this model was selected for final analysis.
 
 ![]({{ "/assets/images/batt_ground/brecall.png" | absolute_url }})
 
-By default, binary classification models predict an observation to be in the positive class if the algorithm outputs a probability greater than 50% that the observation is in the positive class. If desired, this decision threshold can be lowered to increase positive class prediction. This will further increase recall and decrease precision performance. In some cases, the trade-off may be worth it. Perhaps a well-funded political campaign is in the final few weeks of an extremely tight race and is willing to commit additional resources. It may be worth knocking on doors in every county that could possibly be swayed. With this in mind, the final Logistic Regression model can be modified by lowering the decision threshold to 39% and all "swing" counties in the 2016 election are correctly identified.
+The heat map below shows the confusion matrix of the final model. 78% of the "swing" counties were correctly identified using this model. Quite an improvement from the initial 0%.
+
+![]({{ "/assets/images/batt_ground/conf_mat.png" | absolute_url }})
+
+By default, binary classification models predict an observation to be in the positive class if the algorithm outputs a probability greater than 50% that the observation is in the positive class. If desired, this decision threshold can be lowered to increase positive class prediction. This will further increase recall and decrease precision performance. In some cases, the trade-off may be worth it. Perhaps a well-funded political campaign is in the final few weeks of an extremely tight race and is willing to commit additional resources. It may be worth knocking on doors in every county that could possibly be swayed. With this in mind, the final Logistic Regression model can be modified by lowering the decision threshold to 39% and all "swing" counties in the 2016 election are correctly identified. Below, is a heat map showing the confusion matrix of the model with the modified threshold.
+
+![]({{ "/assets/images/batt_ground/thr_conf_mat.png" | absolute_url }})
 
 ### Conclusions
 
-With the final model selected, features leading to a "swing" county prediction can be analyzed. The bar graph below shows the positive and negative weights which contribute to identification as a "swing" county. Note that, after tuning, only four of the thirteen features impacted the model. As indicated below, "swing" counties tend to have residents with a higher college degree rate, a lower white population, slightly lower income and slightly lower median age. In general, these demographics trend toward Democratic voters. Perhaps this indicates that in the 2016 election, Donald Trump had an advantage since these counties were in play. 
+With the final model selected, features leading to a "swing" county prediction can be analyzed. The bar graph below shows the positive and negative weights which contribute to identification as a "swing" county. Note that, after tuning, only four of the thirteen features impacted the model. As indicated below, "swing" counties tend to have residents with a higher college degree rate, a lower white population, slightly lower income and slightly lower median age. In general, these demographics trend toward Democratic voters. Perhaps this indicates that in the 2016 election, Donald Trump had an advantage since counties with these particular demographics were in play.
 
 ![]({{ "/assets/images/batt_ground/lr_feat.png" | absolute_url }})
