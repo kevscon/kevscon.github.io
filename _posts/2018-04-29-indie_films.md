@@ -51,3 +51,5 @@ The feature weights displayed above indicate which factors will favorably or neg
 - Movies in the romance genre with a PG-13 ratings and a November release perform well.
 - PG-13 movies tend to do well when combined with more days in theaters.
 - There is a negative correlation with performance for horror films released in July.
+
+Looking at the top grossing independent movies for the dataset, we see these patterns. The top five movies are from the Twighlight and Hunger Games series. The Twighlight series are PG-13 romance films released in November with above average budgets and theater release. The Hunger Games series are PG-13 films with wide release and hefty budgets.
