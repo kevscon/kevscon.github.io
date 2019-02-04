@@ -8,7 +8,7 @@ title: Battleground Counties in the 2016 Election
 Our nation is divided. There is a bitter split among voters between our two major political parties. As time marches forward, it seems the rift between these two sides only deepens throughout the country. An election's outcome may come down to a set of particular voters in a handful of counties. Can characteristics of these voters be identified? Practically, this information could be used to shed light on which voters political campaigns should target to tip the balance in a tight election. More generally, insight may be gained into the attributes of the ever-shrinking segment of our population that is not politically entrenched.
 
 ## Summary
-In this analysis, the results of the 2016 election at the county level were compared to its demographics to determine if any trends were apparent for the most undecided counties.
+In this analysis, the results of the 2016 election were examined at the county level. County demographic data was used to determine if any trends were apparent for the most undecided counties.
 
 ### Data
 A total of 3,142 counties were examined for the analysis and demographic data was retrieved from the American Community Survey. For the purposes of this analysis, a "swing" county was defined as a county with an election result with a 5% or lower margin of victory. For example, a county with 52% of the vote going to Donald Trump (R) and 47% going to Hilary Clinton (D) would be considered a swing county. Thirteen features were investigated for correlation with a swing county. Election results were based on data from the New York Times.
@@ -19,7 +19,7 @@ Supervised machine learning methods were employed using binary classification. C
 ![]({{ "/assets/images/batt_ground/cls_rep.png" | absolute_url }})
 
 The goal of the analysis was to gather insight into the characteristics of "swing" counties. This lead to using two approaches for modeling:
-1. Recall was prioritized over precision. This yields in fewer false negatives but results in the trade-off of increased false positives.
+1. Recall was prioritized over precision. This yielded fewer false negatives but resulted in the trade-off of increased false positives.
 2. Logistic Regression and Random Forest models were selected since they both provide insight into feature impacts on outcomes.
 
 Initial models resulted in 0% recall as a direct result of the severe class imbalance! Fortunately, methods are available to boost recall performance:
