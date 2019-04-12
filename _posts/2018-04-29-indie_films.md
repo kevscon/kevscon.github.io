@@ -78,7 +78,7 @@ Model prediction performance was not spectacular. The model achieved an r-square
 
 ![]({{ "/assets/images/ind_film/mod_pred.png" | absolute_url }})
 
-What may be the culprit here? The data does not follow a normal distribution and this is the case even after converting to to log scale. Looking at the residual plot, there is a clear revenue threshold - many films are bunched around the same gross revenue. This non-normal distribution of the residual plot indicates that the data does not follow the normal distribution that linear regression assumes. This is a good indicator that the model's effectiveness will be limited.
+What may be the culprit here? The data does not follow a normal distribution and this is the case even after converting it to log scale. Looking at the residual plot, there is a clear revenue threshold - where few films gross below and many films bunch around. This non-normal distribution of the residual plot indicates that the data does not follow the normal distribution that linear regression assumes. This is a good indicator that the model's effectiveness is limited.
 
 ![]({{ "/assets/images/ind_film/residuals.png" | absolute_url }})
 

@@ -65,7 +65,7 @@ By default, binary classification models predict an observation to be in the pos
 Note the significant increase in false positives (upper right) with the lower threshold.
 
 ### Model Interpretation
-With the final model selected, features correlating with a "swing" county prediction can be analyzed. The bar graph below shows the positive and negative weights which contribute to identification as a "swing" county. For this task, I took advantage of the same feature weight sorting function developed in my independent film linear regression project - [Forecasting Indie Film Performance](https://kevscon.github.io/2018/04/29/indie_films.html). "Swing" counties tend to have residents with a higher college degree rate, a lower white population and a slightly higher number of households.
+With the final model selected, features correlating with a "swing" county prediction can be analyzed. The bar graph below shows the positive and negative weights which contribute to identification as a "swing" county. For this task, I took advantage of the same feature weight sorting function developed in my independent film linear regression project - [Forecasting Indie Film Performance](https://kevscon.github.io/2018/04/29/indie_films.html). "Swing" counties tend to have residents with a higher college degree rate, a lower white population and a higher number of households (very, very small contribution).
 
 ![]({{ "/assets/images/batt_ground/log_feat.png" | absolute_url }})
 
