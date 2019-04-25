@@ -28,7 +28,29 @@ These restrictions resulted in a dataset of 1,639 bridges. For each structure, a
 Supervised machine learning methods were employed using binary classification. The 2017 Sufficiency Rating was used as the bridge performance metric. Federal Highway Administration (FHWA) considers bridges with a Sufficiency Rating less than 50 to be in poor condition. This was the threshold used for classification. The model predicts whether a given structure will fall into one of two classes - "poor" or "not poor" - during a period of ten years.
 
 ### Categorical Data
-Half of the NBI items used for analysis were categorical variables. Each of these items consisted of a code representing one of several particular conditions. For use in modeling, these variables were encoded so that a "1" was input if a condition applied to a bridge observation and a "0" was input otherwise. This lead to 26 categorical items being transformed into 165 features for use in the model. Combined with the numerical items, a total of 191 features being used for model input.
+Half of the NBI items used for analysis were categorical variables. Each of these items consisted of a code representing one of several particular conditions. For use in modeling, these variables were encoded so that a "1" was input if a condition applied to a bridge observation and a "0" was input otherwise.
+
+For example, a bridge's median is coded under NBI Item 33 as follows:
+
+**NBI Item 33 - Bridge Median**
+
+| NBI Code | Description |
+| --- | --- |
+| 0 | no median |
+| 1 | open median |
+| 2 | closed median without barrier |
+| 3 | closed median with barrier |
+
+For hypothetical Bridge 01 with an open median barrier and Bridge 02 with a closed median barrier, the encoded values would be just so:
+
+**Encoded Bridge Median Feature**
+
+| Structure | Code 0 | Code 1 | Code 2 | Code 3 |
+| --- | --- | --- | --- | --- |
+| Bridge 01 | 0 | 1 | 0 | 0 |
+| Bridge 02 | 0 | 0 | 0 | 1 |
+
+This process lead to 26 categorical items being transformed into 165 features for use in the model. Combined with the numerical items, a total of 191 features being used for model input.
 
 ### Train/Test Split
 The model was developed using 80% of the 1,639 observations - with the other 20% set aside for evaluation of the model's performance.
