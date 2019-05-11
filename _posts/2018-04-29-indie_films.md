@@ -128,7 +128,14 @@ While the model could not give a high level of accurate revenue prediction, it d
 
 When inspecting the features of the top grossing independent movies in the dataset, the patterns indicated by the model can be clearly identified. The top five movies are from the Twilight and Hunger Games series. The Twilight series are PG-13 romance films released in November with above average budgets and days in theaters. The Hunger Games series are PG-13 films with a long run in theaters and hefty budgets. Here's a table of the top film features and the average for the dataset:
 
-![]({{ "/assets/images/ind_film/top_five.png" | absolute_url }})
+| Title | Genre | MPAA Rating | Release Month | Budget ($) | No. Days |
+| --- | --- | --- | --- | --- | --- |
+| Indie Film Average | -- | -- | -- | 28,296,713 | 76 |
+| The Twilight Saga: New Moon | Romance | PG-13 | November | 57,127,674 | 133 |
+| The Hunger Games: Catching Fire | Action / Adventure | PG-13 | November | 136,787,475 | 133 |
+| The Twilight Saga: Eclipse | Romance | PG-13 | June | 76,439,813 | 114 |
+| The Hunger Games | Action / Adventure | PG-13 | March | 85,409,897 | 168 |
+| The Twilight Saga: Breaking Dawn Part 2 | Romance | PG-13 | November | 28,296,713 | 112 |
 
 Jupyter notebooks of my data processing and regression modeling for this project can be found here:
 
