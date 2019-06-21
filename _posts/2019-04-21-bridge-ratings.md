@@ -77,12 +77,12 @@ Once the model's algorithm has been developed based on the train data, the test 
 The model's overall accuracy was 81%. However, a more useful evaluation metric for a classification model is the confusion matrix. The confusion matrix provides a more complete picture of a model's performance. Based on a model's results, it consists of True Negatives, True Positives, False Positives and False Negatives. The heat map template below contains a description for each location in the matrix. A high-performing model will be shown to have darker shaded upper left and lower right squares while having lighter shaded upper right and lower left squares.
 
 ![]({{ "/assets/images/bridge_ratings/ex_cm.png" | absolute_url }})
-*Description of the four cases in the confusion matrix.*
+*Descriptions of each of the four cases in the confusion matrix. Each box shows the class for the model prediction and what the true class actually is.*
 
 The heat map below displays the confusion matrix for model predictions on the test data.
 
 ![]({{ "/assets/images/bridge_ratings/conf_mat.png" | absolute_url }})
-*Rates for each of the four cases in the confusion matrix.*
+*Rates based on test results for each of the four cases in the confusion matrix.*
 
 The True Positive rate is important because it indicates specifically how often the "poor" class is correctly identified. Due to the class imbalance previously mentioned, relatively high overall accuracy could be achieved by simply predicting a class of "not poor" 100% of the time. A True Positive rate of 85%, as shown in the heat map above, indicates that this is not the case with this model. If this value is not sufficiently high, interpretation of the model would be unreliable.
 
@@ -91,7 +91,7 @@ The True Positive rate is important because it indicates specifically how often 
 The top ten NBI items correlating with bridge performance are displayed in the bar chart below. Positive (green) values indicate items that tend to lead to better bridge performance over the ten year period. Negative (red) values indicate items that are associated with a bridge falling into the "poor" class. The bars are shown as a percentage of influence over the model algorithm.
 
 ![]({{ "/assets/images/bridge_ratings/feat_wgt.png" | absolute_url }})
-*Top ten most inflential NBI items on the classification model.*
+*Top ten most influential NBI items on the classification model.*
 
 Three of the top ten NBI items are pretty intuitive (and uninteresting) - a higher initial Sufficiency Rating, a Superstructure Condition Rating of 8 and a Superstructure Condition Rating of 7 all lead to better performance. More useful takeaways:
 
