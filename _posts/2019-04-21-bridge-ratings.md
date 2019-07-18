@@ -4,7 +4,7 @@ title: Predicting Bridge Performance with NBI Data
 ---
 
 ![]({{ "/assets/images/bridge_ratings/bridge.jpg" | absolute_url }})
-*Source: hdqwalls.com*
+*Image Source: hdqwalls.com*
 
 Much of the transportation infrastructure in the United States is now exceeding its intended design life. At the same time, the budgets of many state infrastructure agencies are under constant strain. It is imperative that limited resources target the most critical assets. One method to achieve this aim is to develop a quantitative model to predict which bridges will require intervention in the near future.
 
@@ -105,6 +105,11 @@ Three of the top ten NBI items are pretty intuitive (and uninteresting) - a high
   - route carried services minor urban artery
   - posted for load restrictions
 
+### Application
+
+Based on this classification model, an application was created to predict a bridge's future rating category (Poor or Fair/Good). Input is limited to the most influential NBI items shown in the bar graph above. NBI items that are not directly input are assumed to have a median value if numerical and most common category if categorical. These assumed values are based on the 2007 dataset. The application can be accessed here (it may take a few moments to load):
+
+[Bridge Performance Predictor](https://bridge-rating-app.herokuapp.com/)
 
 Jupyter notebooks of my data processing and classification modeling code for this project can be found here:
 
