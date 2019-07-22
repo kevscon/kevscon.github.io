@@ -3,8 +3,8 @@ layout: post
 title: Predicting Bridge Performance with NBI Data
 ---
 
-![]({{ "/assets/images/bridge_ratings/bridge.jpg" | absolute_url }})
-*Image Source: hdqwalls.com*
+![]({{ "/assets/images/bridge_ratings/ww.jpg" | absolute_url }})
+*Woodrow Wilson Bridge. Image Source: Andrew James*
 
 Much of the transportation infrastructure in the United States is now exceeding its intended design life. At the same time, the budgets of many state infrastructure agencies are under constant strain. It is imperative that limited resources target the most critical assets. One method to achieve this aim is to develop a quantitative model to predict which bridges will require intervention in the near future.
 
@@ -93,8 +93,12 @@ The top ten NBI items correlating with bridge performance are displayed in the b
 ![]({{ "/assets/images/bridge_ratings/feat_wgt.png" | absolute_url }})
 *Top ten most influential NBI items on the classification model.*
 
-Three of the top ten NBI items are pretty intuitive (and uninteresting) - a higher initial Sufficiency Rating, a Superstructure Condition Rating of 8 and a Superstructure Condition Rating of 7 all lead to better performance. More useful takeaways:
+Three of the top ten NBI items correlate with better performance over time and are pretty intuitive (and uninteresting):
+- Higher initial Sufficiency Rating (average of dataset is 69.7)
+- Superstructure Condition Rating of 8
+- Superstructure Condition Rating of 7
 
+More useful takeaways:
 - Bridges with wooden/timber decks are associated with poorer performance. This item has an influence of 5% within the model prediction.
 - Items that correlate with increased bridge performance are:
   - concrete superstructure
@@ -105,12 +109,39 @@ Three of the top ten NBI items are pretty intuitive (and uninteresting) - a high
   - route carried services minor urban artery
   - posted for load restrictions
 
-### Application
+Based on the insights above, the state DOT may have some insight when it comes to making decisions related to bridge maintenance priorities. For example, it may be wise to invest in a posted bridge with a steel superstructure, wooden deck and no wearing surface carrying traffic over a waterway if its Superstructure Condition Rating is less than 7.
+
+### Sample Bridges
+
+I wanted to investigate representative bridges nearby where I reside in Northern Virginia. Based on top characteristics indicated by the model, the three bridges shown in the map below correlate with poor future ratings.
+
+![]({{ "/assets/images/bridge_ratings/bridge_locs.png" | absolute_url }})
+*Yellow pins indicate location of bridges in N. Virginia that are prone to poor future ratings*
+
+**Top Feature Summary**
+
+| County | Init. SR | Sup. Rating | Deck Type | Sup. Material | Wearing Surface | Functional Class | Hist. Sig. | Posting | Service Under |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Fairfax | 63.1 | 5 | Wood | Steel | Asphalt | Urban Collector | not eligible | Open | Waterway |
+| Loudon | 50.4 | 6 | Wood | Steel | Asphalt | Rural Local | not eligible | Load | Waterway |
+| Loudon | 67.7 | 6 | Wood | Steel | Asphalt | Urban Local | not eligible | Open | Waterway |
+
+These three bridges have below average Sufficiency Ratings, Superstructure Condition Ratings below 7, wooden deck, don't have concrete superstructures, don't have a latex wearing surface and aren't over a highway. All these features indicate a higher likelihood of receiving a Poor Rating in the future. Bridges 11375 and 11283 both have ADT values less than 500. Bridge 06673 located in Fairfax County is an Urban Collector near I-95 and has a much higher ADT of almost 2,000. Let's take a look at this one with Google Earth...
+
+![]({{ "/assets/images/bridge_ratings/06673.png" | absolute_url }})
+*Plan view of Bridge 06673*
+
+As seen in the street view, Bridge 06673 crosses over a waterway and has a wooden deck with an asphalt overlay.
+
+![]({{ "/assets/images/bridge_ratings/06673_street.png" | absolute_url }})
+*Street veiw of Bridge 06673*
+
+### Predictor App
 
 Based on this classification model, an application was created to predict a bridge's future rating category (Poor or Fair/Good). Input is limited to the most influential NBI items shown in the bar graph above. NBI items that are not directly input are assumed to have a median value if numerical and most common category if categorical. These assumed values are based on the 2007 dataset. The application can be accessed here (it may take a few moments to load):
 
 [Bridge Performance Predictor](https://bridge-rating-app.herokuapp.com/)
 
-Jupyter notebooks of my data processing and classification modeling code for this project can be found here:
+Python code of data processing and classification modeling code for this project can be found here:
 
 [Predicting Bridge Performance with NBI Data Github repository](https://github.com/kevscon/bridge-ratings)
