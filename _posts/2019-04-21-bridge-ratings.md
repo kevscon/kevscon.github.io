@@ -26,9 +26,9 @@ These restrictions resulted in a dataset of 1,639 bridges. For each structure, a
 
 ## Modeling
 
-The 2017 Sufficiency Rating was used as the bridge performance metric. Federal Highway Administration (FHWA) considers bridges with a Sufficiency Rating less than 50 to be in poor condition. This was the threshold used for classification. The model predicts whether a given structure will fall into one of two classes - "poor" or "not poor" - during a period of ten years.
+The 2017 Sufficiency Rating was used as the bridge performance metric. Federal Highway Administration (FHWA) considers bridges with a Sufficiency Rating less than 50 to be in poor condition. This was the threshold used for classification. The model predicts whether a given structure will fall into one of two classes - "poor" or "not poor" - after a period of ten years.
 
-Supervised machine learning methods were employed using binary classification. Why bother with the effort of creating a model? It certainly would be much simpler to compare the average values of a handful of NBI items for each of the two classes. While this example may provide some general insight, a machine learning model will provide a much more thorough analysis. Three major advantages of this approach:
+Supervised machine learning methods were employed using binary classification. Why bother with the effort of creating a model? It certainly would be much simpler to compare the average values of a handful of NBI items for each of the two classes. While this approach may provide some general insight, a machine learning model will provide a much more thorough analysis. Three major advantages of modeling:
 
   - There is no need to manually select input items based on qualitative intuition.
   - Models are able to identify "hidden" patterns and express the cumulative affect of all variables on the final prediction output.
@@ -64,7 +64,7 @@ This process lead to 26 categorical items being transformed into 165 variables f
 The model was developed using 80% of the 1,639 observations (train data) - with the other 20% set aside for evaluation of the model's performance (test data).
 
 ### Logistic Regression Model
-There are several classification models in the machine learning world. For this analysis, logistic regression was selected. The major advantage of using this type of model is its interpret-ability. It provides quantitative insight into how each variable affects the model output - in terms of both magnitude and direction. A detailed overview of logistic regression can be found [here](https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc).
+There are several classification models in the machine learning world. For this analysis, logistic regression was selected. The major advantage of using this type of model is its interpretability. It provides quantitative insight into how each variable affects the model output - in terms of both magnitude and direction. A detailed overview of logistic regression can be found [here](https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc).
 
 ### Class Imbalance
 One challenge with the data for this analysis was class imbalance - 77% of the bridges fell into the "not poor" class. This tends to cause a model to over-predict "not poor". To account for this, the "weights" of the two classes in the model's algorithm were modified to place greater importance on the "poor" class.
@@ -84,64 +84,64 @@ The heat map below displays the confusion matrix for model predictions on the te
 ![]({{ "/assets/images/bridge_ratings/conf_mat.png" | absolute_url }})
 *Rates based on test results for each of the four cases in the confusion matrix.*
 
-The True Positive rate is important because it indicates specifically how often the "poor" class is correctly identified. Due to the class imbalance previously mentioned, relatively high overall accuracy could be achieved by simply predicting a class of "not poor" 100% of the time. A True Positive rate of 85%, as shown in the heat map above, indicates that this is not the case with this model. If this value is not sufficiently high, interpretation of the model would be unreliable.
+The True Positive rate is important because it indicates specifically how often the "poor" class is correctly identified. If this value is not sufficiently high, interpretation of the model would be unreliable. Due to the class imbalance previously mentioned, a relatively high overall accuracy could be achieved by always predicting a class of "not poor". A True Positive rate of 85%, as shown in the heat map above, indicates that this model is making predictions reliably.
 
 ### Model Interpretation
 
-The top ten NBI items correlating with bridge performance are displayed in the bar chart below. Positive (green) values indicate items that tend to lead to better bridge performance over the ten year period. Negative (red) values indicate items that are associated with a bridge falling into the "poor" class. The bars are shown as a percentage of influence over the model algorithm.
+As mentioned when selecting the Logistic Regression model for this analysis, a major benefit is interpretability. The model indicates how each variable affects the output. The top ten NBI items correlating with a future Sufficiency Rating of "not poor" are displayed in the bar chart below. Positive (green) values indicate items that tend to lead to better bridge performance over the ten year period. Negative (red) values indicate items that are associated with a bridge falling into the "poor" class. The bars are shown as a percentage of influence over the model algorithm.
 
 ![]({{ "/assets/images/bridge_ratings/feat_wgt.png" | absolute_url }})
 *Top ten most influential NBI items on the classification model.*
 
-Three of the top ten NBI items correlate with better performance over time and are pretty intuitive (and uninteresting):
+These top 10 NBI items account for 44% of the algorithm's output (the other 56% is affected by the remaining 181 variables). Three of the top variables that correlate with better performance over time are pretty intuitive:
 - Higher initial Sufficiency Rating (average of dataset is 69.7)
 - Superstructure Condition Rating of 8
 - Superstructure Condition Rating of 7
 
-More useful takeaways:
+So a bridge starting off in better condition will be less likely to fall into "poor" in 10 years. This may seem obvious but it may be of interest to note that the Superstructure Rating is of more consequence than Deck or Substructure Ratings. Other useful takeaways:
 - Bridges with wooden/timber decks are associated with poorer performance. This item has an influence of 5% within the model prediction.
-- Items that correlate with increased bridge performance are:
+- Other items that correlate with increased bridge performance are:
   - concrete superstructure
-  - latex wearing surface
+  - latex concrete wearing surface
   - highway route underneath the structure
 - Other items that correlate with decreased bridge performance are:
   - undetermined historical significance
-  - route carried services minor urban artery
+  - structure part of minor urban artery
   - posted for load restrictions
 
-Based on the insights above, the state DOT may have some insight when it comes to making decisions related to bridge maintenance priorities. For example, it may be wise to invest in a posted bridge with a steel superstructure, wooden deck and no wearing surface carrying traffic over a waterway if its Superstructure Condition Rating is less than 7.
+Based on the rationale above, the state DOT may have some insight when it comes to making decisions related to bridge maintenance priorities. For example, it may be wise to invest in a posted bridge with a steel superstructure, wooden deck and no wearing surface carrying traffic over a waterway if its Superstructure Condition Rating is less than 7.
 
 ### Sample Bridges
 
-I wanted to investigate representative bridges nearby where I reside in Northern Virginia. Based on top characteristics indicated by the model, the three bridges shown in the map below correlate with poor future ratings.
+I wanted to investigate representative bridges nearby where I reside in Northern Virginia. Based on top characteristics indicated by the model, the three bridges shown in the table below correlate with poor future ratings.
+
+**2007 NBI Summaries**
+
+| County | SR | Sup. Rating | Deck Type | Sup. Material | Wearing Surface | Functional Class | Hist. Sig. | Posting | Service Under |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Fairfax | 63.1 | 5 | Wood | Steel | None | Urban Collector | not eligible | Open | Waterway |
+| Loudon | 50.4 | 6 | Wood | Steel | Asphalt | Rural Local | not eligible | Load | Waterway |
+| Loudon | 67.7 | 6 | Wood | Steel | Asphalt | Urban Local | not eligible | Open | Waterway |
 
 ![]({{ "/assets/images/bridge_ratings/bridge_locs.png" | absolute_url }})
 *Yellow pins indicate location of bridges in N. Virginia that are prone to poor future ratings*
 
-**Top Feature Summary**
-
-| County | Init. SR | Sup. Rating | Deck Type | Sup. Material | Wearing Surface | Functional Class | Hist. Sig. | Posting | Service Under |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Fairfax | 63.1 | 5 | Wood | Steel | Asphalt | Urban Collector | not eligible | Open | Waterway |
-| Loudon | 50.4 | 6 | Wood | Steel | Asphalt | Rural Local | not eligible | Load | Waterway |
-| Loudon | 67.7 | 6 | Wood | Steel | Asphalt | Urban Local | not eligible | Open | Waterway |
-
-These three bridges have below average Sufficiency Ratings, Superstructure Condition Ratings below 7, wooden deck, don't have concrete superstructures, don't have a latex wearing surface and aren't over a highway. All these features indicate a higher likelihood of receiving a Poor Rating in the future. Bridges 11375 and 11283 both have ADT values less than 500. Bridge 06673 located in Fairfax County is an Urban Collector near I-95 and has a much higher ADT of almost 2,000. Let's take a look at this one with Google Earth...
+These three bridges have below average initial Sufficiency Ratings, Superstructure Condition Ratings below 7, wooden decks, don't have concrete superstructures, do not have latex concrete wearing surfaces and are not over highways. All of these characteristics indicate a higher likelihood of receiving a poor rating in the future. In fact, all three had a poor rating in 2017. Bridges 11375 and 11283 both have ADT values less than 500. Bridge 06673 located in Fairfax County is an Urban Collector that crosses Pohick Creek near I-95 and has a much higher ADT of almost 2,000. Let's take a look at this one with Google Earth...
 
 ![]({{ "/assets/images/bridge_ratings/06673.png" | absolute_url }})
 *Plan view of Bridge 06673*
 
-As seen in the street view, Bridge 06673 crosses over a waterway and has a wooden deck with an asphalt overlay.
+As seen in the street view, Bridge 06673 crosses over a waterway and has a wooden deck. It looks like an asphalt wearing surface has been added since 2007 but based on this analysis it may have been wiser to use latex concrete material instead.
 
 ![]({{ "/assets/images/bridge_ratings/06673_street.png" | absolute_url }})
 *Street veiw of Bridge 06673*
 
 ### Predictor App
 
-Based on this classification model, an application was created to predict a bridge's future rating category (Poor or Fair/Good). Input is limited to the most influential NBI items shown in the bar graph above. NBI items that are not directly input are assumed to have a median value if numerical and most common category if categorical. These assumed values are based on the 2007 dataset. The application can be accessed here (it may take a few moments to load):
+Based on this classification model, an application was created to predict a bridge's future rating category (Poor or Fair). Input is limited to the most influential NBI items shown in the bar graph above. NBI items that are not directly input are assumed to have a median value if numerical and most common category if categorical. These assumed values are based on the 2007 dataset. The application can be accessed here (it may take a few moments to load):
 
 [Bridge Performance Predictor](https://bridge-rating-app.herokuapp.com/)
 
-Python code of data processing and classification modeling code for this project can be found here:
+Python code of data processing and classification modeling for this project can be found here:
 
 [Predicting Bridge Performance with NBI Data Github repository](https://github.com/kevscon/bridge-ratings)
