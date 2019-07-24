@@ -122,20 +122,20 @@ Based on the rationale above, the state DOT may have some insight when it comes 
 
 ### Sample Bridges
 
-I wanted to investigate representative bridges nearby where I reside in Northern Virginia. Based on top characteristics indicated by the model, the three bridges shown in the table below correlate with poor future ratings.
+I wanted to investigate representative bridges nearby where I reside in Northern Virginia. Based on top characteristics indicated by the model, the three bridges shown in the table and map below correlate with poor future ratings.
 
 **2007 NBI Summaries**
 
-| County | SR | Sup. Rating | Deck Type | Sup. Material | Wearing Surface | Functional Class | Hist. Sig. | Posting | Service Under |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Fairfax | 63.1 | 5 | Wood | Steel | None | Urban Collector | not eligible | Open | Waterway |
-| Loudon | 50.4 | 6 | Wood | Steel | Asphalt | Rural Local | not eligible | Load | Waterway |
-| Loudon | 67.7 | 6 | Wood | Steel | Asphalt | Urban Local | not eligible | Open | Waterway |
+| Bridge | County | 2007 SR | Sup. Rating | Deck Type | Sup. Material | Wearing Surface | Functional Class | Hist. Sig. | Posting | Service Under |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 06673 | Fairfax | 63.1 | 5 | Wood | Steel | None | Urban Collector | not eligible | Open | Waterway |
+| 11283 | Loudon | 50.4 | 6 | Wood | Steel | Asphalt | Rural Local | not eligible | Load | Waterway |
+| 11375 | Loudon | 67.7 | 6 | Wood | Steel | Asphalt | Urban Local | not eligible | Open | Waterway |
 
 ![]({{ "/assets/images/bridge_ratings/bridge_locs.png" | absolute_url }})
 *Yellow pins indicate location of bridges in N. Virginia that are prone to poor future ratings.*
 
-These three bridges have below average initial Sufficiency Ratings, Superstructure Condition Ratings below 7, wooden decks, don't have concrete superstructures, do not have latex concrete wearing surfaces and are not over highways. All of these characteristics indicate a higher likelihood of receiving a poor rating in the future. In fact, all three had a poor rating in 2017. Bridges 11375 and 11283 both have ADT values less than 500. Bridge 06673 located in Fairfax County is an Urban Collector that crosses Pohick Creek near I-95 and has a much higher ADT of almost 2,000. Let's take a look at this one with Google Earth...
+These three bridges have below average initial Sufficiency Ratings, Superstructure Condition Ratings below 7, wooden decks, don't have concrete superstructures, do not have latex concrete wearing surfaces and are not over highways. All of these characteristics indicate a higher likelihood of receiving a poor rating in the future. In fact, two - 11283 and 06673 - had poor ratings in 2017. Bridge 11283 has an ADT value less than 300. Bridge 06673 located in Fairfax County is an Urban Collector that crosses Pohick Creek near I-95 and has a much higher ADT of almost 2,000. Let's take a look at this one with Google Earth...
 
 ![]({{ "/assets/images/bridge_ratings/06673.png" | absolute_url }})
 *Plan view of Bridge 06673.*
