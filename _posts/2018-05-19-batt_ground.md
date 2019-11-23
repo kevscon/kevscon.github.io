@@ -13,7 +13,7 @@ In this analysis, the results of the 2016 election were examined at the county l
 ## Data
 All voting counties in the US and the District of Columbia (a total of 3,142) were examined for this project. Demographic data was retrieved from the American Community Survey and election results were based on data from the New York Times. For the purposes of this analysis, a "swing" county was defined as a county with an election result with a 5% or lower margin of victory. For example, a county with 52% of the vote going to Donald Trump (R) and 47% going to Hilary Clinton (D) would be considered a swing county. Fourteen features were investigated for correlation with a swing county prediction.
 
-As a visual overview, the fourteen features were decompressed into two for principle component analysis. There is no region in the plot which is exclusive to "swing" county observations. They tend to be somewhat clustered in the middle along with many "safe" county observations.
+For a visual overview, the fourteen dimensions of data (features) were transformed into two using Principle Component Analysis (PCA). There is no clear region in the plot exclusive to "swing" county observations. They tend to be somewhat clustered in the middle along with many "safe" county observations.
 
 ![]({{ "/assets/images/batt_ground/pca.png" | absolute_url }})
 
