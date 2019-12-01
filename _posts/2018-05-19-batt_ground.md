@@ -77,11 +77,17 @@ Note that, after tuning, only three of the fourteen features impacted the model.
 
  Below is a table of four swing counties of interest as well as the county average for the nation. These are swing counties in pivotal swing states that helped determine the outcome of the 2016 election. All four counties have above average college degree holding residents. Half of the counties have a below average white population and three of the four have an above average number of households.
 
-![]({{ "/assets/images/batt_ground/swingers.png" | absolute_url }})
+ | County Name | State | College Rate (%) | White Rate (%) | No. Households |
+ | --- | --- | --- | --- | --- |
+ | Average | -- | 20 | 83 | 37301 |
+ | Isabella  | MI | 28 | 87 | 24712 |
+ | Kent  | MI | 33 | 78 | 234570 |
+ | Kenosha  | WI | 24 | 86 | 62994 |
+ | Racine  | WI | 24 | 79 | 75291 |
 
 Isabella and Kent counties in Michigan are circled in the map below.
 
-![]({{ "/assets/images/batt_ground/MI_map.png" | absolute_url }})
+<img src="/assets/images/batt_ground/MI_map.png" alt="MI" width="350"/>
 *Source: New York Times*
 
 Kenosha and Racine counties in Wisconsin are circled in the map below.
