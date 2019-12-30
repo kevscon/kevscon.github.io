@@ -11,7 +11,7 @@ Our nation is divided. There is a bitter split among voters between our two majo
 In this analysis, the results of the 2016 election were examined at the county level. Classification models were developed to determine what county demographic trends were indicative of the most undecided counties.
 
 ## Data
-All voting counties in the US and the District of Columbia (a total of 3,142) were examined for this project. Demographic data was retrieved from the American Community Survey and election results were based on data from the New York Times. For the purposes of this analysis, a "swing" county was defined as a county with an election result with a 5% or lower margin of victory. For example, a county with 52% of the vote going to Donald Trump (R) and 47% going to Hilary Clinton (D) would be considered a swing county. Fourteen features were investigated for correlation with a swing county prediction.
+All voting counties in the US and the District of Columbia (a total of 3,142) were examined for this project. Demographic data was retrieved from the American Community Survey (US Census Bureau) and election results were based on data from the New York Times. For the purposes of this analysis, a "swing" county was defined as a county with an election result with a 5% or lower margin of victory. For example, a county with 52% of the vote going to Donald Trump (R) and 47% going to Hilary Clinton (D) would be considered a swing county. Fourteen features were investigated for correlation with a swing county prediction.
 
 For a visual overview, the fourteen dimensions of data (features) were transformed into two using Principle Component Analysis (PCA). As displayed below, there is no clear region in the condensed 2-D plot that is exclusive to "swing" county observations. They tend to be somewhat clustered in the middle along with many "safe" county observations.
 
@@ -41,7 +41,7 @@ In the next few graphs, we've got a different "red vs blue" contest going on - t
 
 ![]({{ "/assets/images/batt_ground/brecall.png" | absolute_url }})
 
-As previously stated, the recall score is being prioritized in this project but other metrics were compared as well. Below is the ROC curve which compares the true positive rate to the false positive rate. Based on this plot, both models appear to have good performance since they trend toward the desirable upper left quadrant. However when comparing the area under the curve (AUC), Random Forest beats Logistic Regression.
+As previously stated, the recall score is being prioritized in this project but other metrics were compared as well. Below is the Receiver Operating Characteristic (ROC) curve which compares the true positive rate to the false positive rate. Based on this plot, both models appear to have good performance since they trend toward the desirable upper left quadrant. However when comparing the area under the curve (AUC), Random Forest beats Logistic Regression.
 
 ![]({{ "/assets/images/batt_ground/roc.png" | absolute_url }})
 
@@ -65,11 +65,14 @@ By default, binary classification models predict an observation to be in the pos
 Note the significant increase in false positives (upper right) with the lower threshold.
 
 ### Model Interpretation
-With the final model selected, features correlating with a "swing" county prediction can be analyzed. The bar graph below shows the positive and negative weights which contribute to identification as a "swing" county. For this task, I took advantage of the same feature weight sorting function developed in my independent film linear regression project - [Forecasting Indie Film Performance](https://kevscon.github.io/2018/04/29/indie_films.html). "Swing" counties tend to have residents with a higher college degree rate, a lower white population and a higher number of households (very, very small contribution).
+With the final model selected, features correlating with a "swing" county prediction can be analyzed. The bar graph below shows the positive and negative weights which contribute to identification as a "swing" county. For this task, I took advantage of the same feature weight sorting function developed in my independent film linear regression project - [Forecasting Indie Film Performance](https://kevscon.github.io/2018/04/29/indie_films.html). Note that, after tuning, only three of the fourteen features impacted the model. The optimal Logistic Regression model utilized L1 regularization which has the ability to completely zero out features.
+
+According to this analysis, "swing" counties tend to have:
+- a higher college degree rate
+- a lower white population
+- a higher number of households (very, very small contribution)
 
 ![]({{ "/assets/images/batt_ground/log_feat.png" | absolute_url }})
-
-Note that, after tuning, only three of the fourteen features impacted the model. The optimal Logistic Regression model utilized L1 regularization which has the ability to completely zero out features.
 
 ## Conclusions
 
@@ -85,14 +88,18 @@ Note that, after tuning, only three of the fourteen features impacted the model.
  | Kenosha  | WI | 24 | 86 | 62994 |
  | Racine  | WI | 24 | 79 | 75291 |
 
-Isabella and Kent counties in Michigan are circled in the map below.
+### Michigan
 
-<img src="/assets/images/batt_ground/MI_map.png" alt="MI" width="350"/>
+Isabella and Kent counties in Michigan are circled in purple in the map below.
+
+<img src="/assets/images/batt_ground/MI.png" alt="MI" width="500"/>
 *Source: New York Times*
 
-Kenosha and Racine counties in Wisconsin are circled in the map below.
+### Wisconsin
 
-![]({{ "/assets/images/batt_ground/WI_map.png" | absolute_url }})
+Kenosha and Racine counties in Wisconsin are circled in purple in the map below. They are both in the southeast corner of the state.
+
+![]({{ "/assets/images/batt_ground/WI.png" | absolute_url }})
 *Source: New York Times*
 
 As indicated by the pale red tint in the maps above, these four counties went for Trump but just barely. While the election was not close in terms of electoral votes, increased Democratic turnout in just a few counties similar to these could have tipped the balance in a handful of swing states and lead to a very different electoral outcome.
