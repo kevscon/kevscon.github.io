@@ -140,7 +140,7 @@ These three bridges have below average initial Sufficiency Ratings, Superstructu
 ![]({{ "/assets/images/bridge_ratings/06673.png" | absolute_url }})
 *Plan view of Bridge 06673.*
 
-As seen in the street view, Bridge 06673 crosses over a waterway and has a wooden deck. It looks like an asphalt wearing surface has been added since 2007 but based on this analysis it may have been wiser to use latex concrete material instead.
+As seen in the street view, Bridge 06673 crosses over a waterway and has a wooden deck. It looks like an asphalt wearing surface has been added since 2007. Based on this analysis it may have been wiser to use an alternative deck protection method.
 
 ![]({{ "/assets/images/bridge_ratings/06673_street.png" | absolute_url }})
 *Street veiw of Bridge 06673.*

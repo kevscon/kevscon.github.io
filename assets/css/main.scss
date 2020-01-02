@@ -4,3 +4,19 @@
 ---
 
 @import "hydeout";
+
+// add css styles here
+
+// column class for indie film posters
+.film_col {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+// row class for indie film posters
+.film_row::after {
+  content: "";
+  clear: both;
+  display: table;
+}

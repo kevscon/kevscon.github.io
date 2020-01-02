@@ -69,7 +69,7 @@ The target variable was the combination of international gross revenue and disc 
 ## Modeling
 The distribution of both target and most features was not normal. Since this is an assumption of linear regression, both were transformed to log scale.
 
-The initial model yielded a very poor r-squared value. Both train and test r-squared values were low, indicating an underfit model. In order to increase effectiveness, the model's complexity was increased using polynomial features which accounted for interaction between features. This created an overfit model with an increased train score but the test score was still very low. Ridge regularization was used to reduce overfitting.
+The initial model yielded a very poor r-squared value. Both train and test r-squared values were low, indicating an underfit model. In order to increase effectiveness, the model's complexity was increased using polynomial features which accounted for interaction. This method increased the total number of features several-fold.  The result was an overfit model with an increased train score and a test score that was still very low. Ridge regularization was used to reduce overfitting.
 
 ## Results
 
@@ -126,7 +126,19 @@ The feature weights displayed above indicate which factors will favorably or neg
 ## Conclusions
 While the model could not give a high level of accurate revenue prediction, it does provide valuable insight into factors which can enhance or diminish performance.
 
-When inspecting the features of the top grossing independent movies in the dataset, the patterns indicated by the model can be clearly identified. The top five movies are from the Twilight and Hunger Games series. The Twilight series are PG-13 romance films released in November with above average budgets and days in theaters. The Hunger Games series are PG-13 films with a long run in theaters and hefty budgets. Here's a table of the top film features and the average for the dataset:
+When inspecting the features of the top grossing independent movies in the dataset, the patterns indicated by the model can be clearly identified. The top five movies are from the Twilight and Hunger Games series. The Twilight series are PG-13 romance films released in November with above average budgets and days in theaters. The Hunger Games series are PG-13 films with a long run in theaters and hefty budgets.
+
+<!-- movie posters -->
+<div class="film_row">
+  <div class="film_col">
+    <img src="/assets/images/ind_film/twilight.jpg" alt="Twilight" style="width:100%">
+  </div>
+  <div class="film_col">
+        <img src="/assets/images/ind_film/hunger_games.jpg" alt="Twilight" style="width:100%">
+  </div>
+</div>
+
+Here's a table of the top film features and the average for the dataset:
 
 | Title | Genre | MPAA Rating | Release Month | Budget ($) | No. Days |
 | --- | --- | --- | --- | --- | --- |
