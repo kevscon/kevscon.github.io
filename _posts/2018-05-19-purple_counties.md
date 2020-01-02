@@ -108,4 +108,4 @@ As indicated by the pale red tint in the maps above, these four counties went fo
 
 Jupyter notebooks of my data processing and classification modeling for this project can be found here:
 
-[Battle Ground Counties Github repository](https://github.com/kevscon/battle-counties)
+[Purple Counties Github repository](https://github.com/kevscon/purple-counties)
