@@ -67,7 +67,7 @@ By default, binary classification models predict an observation to be in the pos
 Note the significant increase in false positives (upper right) with the lower threshold.
 
 ### Model Interpretation
-With the final model selected, features correlating with a "purple" county prediction can be analyzed. The bar graph below shows the positive and negative weights which contribute to identification as a "purple" county. For this task, I took advantage of the same feature weight sorting function developed in my independent film linear regression project - [Forecasting Indie Film Performance](https://kevscon.github.io/2018/04/29/indie_films.html). Note that, after tuning, only three of the fourteen features impacted the model. The optimal Logistic Regression model utilized L1 regularization which has the ability to completely zero out features.
+With the final model selected, features correlating with a "purple" county prediction can be analyzed. The bar graph below shows the weights which contribute to identification as a "purple" county. Features that correlate with "purple" counties are shown in purple while features that correlate with "red/blue" counties are in black. For this task, I took advantage of the same feature weight sorting function developed in my independent film linear regression project - [Forecasting Indie Film Performance](https://kevscon.github.io/2018/04/29/indie_films.html). Note that, after tuning, only three of the fourteen features impacted the model. The optimal Logistic Regression model utilized L1 regularization which has the ability to completely zero out features.
 
 According to this analysis, "purple" counties tend to have:
 - a higher college degree rate
