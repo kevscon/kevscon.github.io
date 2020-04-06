@@ -5,7 +5,7 @@ title: Purple Counties in the 2016 Election
 
 ![]({{ "/assets/images/purple_counties/county_map.png" | absolute_url }})
 
-Our nation is divided. There is an intractable split among voters between our two major political parties. As time marches forward, it seems the rift between these two sides only widens throughout the country. The media portrays a bitter battle between Republican (red) and Democrat (blue) voters as exemplified in maps such as the one above. However, it is voters in the middle who may very well determine the outcome of presidential elections.  Perhaps the focus should be on the purple voters in between the red and blue.
+Our nation is divided. There is an intractable split among voters between our two major political parties. As time marches forward, it seems the rift between these two sides only widens throughout the country. The media portrays a bitter battle between Republican (red) and Democrat (blue) voters as exemplified in maps such as the one above. However, it is voters in the middle who may very well determine the outcome of presidential elections. Perhaps the focus should be on the purple voters in between the red and blue.
 
 Can characteristics of these voters be identified? Practically, this information could be used to shed light on which voters political campaigns should target to tip the balance in a tight election. More generally, insight may be gained into the attributes of the ever-shrinking segment of our population that is not politically entrenched.
 
@@ -15,7 +15,11 @@ In this analysis, the results of the 2016 election were examined at the county l
 ## Data
 All voting counties in the US and the District of Columbia (a total of 3,142) were examined for this project. Demographic data was retrieved from the American Community Survey (part of the US Census Bureau) and election results were based on data from the New York Times. For the purposes of this analysis, a "purple" county was defined as a county with an election result with a 5% or lower margin of victory. For example, a county with 52% of the vote going to Donald Trump (R) and 47% going to Hillary Clinton (D) would be considered a purple county. Fourteen features were investigated for correlation with a purple county prediction.
 
-For a visual overview, the fourteen dimensions of data (features) were transformed into two using Principle Component Analysis (PCA). As displayed below, there is no clear region in the condensed 2-D plot that is exclusive to "purple" county observations. They tend to be somewhat clustered in the middle along with many "red/blue" county observations.
+The map below shows the geographic location of the 2016 "purple" counties throughout the continental United States (there were none in either Alaska or Hawaii). This overview shows that there is no geographical clustering of "purple" counties. They are spread throughout the nation - North, South, East and West.
+
+![]({{ "/assets/images/purple_counties/cls_map.png" | absolute_url }})
+
+The fourteen dimensions of demographic data (features) were compressed into two using Principle Component Analysis (PCA). As displayed below, there is no clear region in the condensed 2-D plot that is exclusive to "purple" county observations. They tend to be somewhat clustered in the middle along with many "red/blue" county observations.
 
 ![]({{ "/assets/images/purple_counties/pca.png" | absolute_url }})
 
