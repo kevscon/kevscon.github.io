@@ -9,6 +9,9 @@ Our nation is divided. There is an intractable split among voters between our tw
 
 Can characteristics of these voters be identified? Practically, this information could be used to shed light on which voters political campaigns should target to tip the balance in a tight election. More generally, insight may be gained into the attributes of the ever-shrinking segment of our population that is not politically entrenched.
 
+![]({{ "/assets/images/purple_counties/ken_bone.jpg" | absolute_url }})
+<p style="text-align: center;"><b>Who Ken be persuaded?</b></p>
+
 ## Summary
 In this analysis, the results of the 2016 election were examined at the county level. Classification models were developed to determine what county demographic trends were indicative of the most undecided counties.
 
