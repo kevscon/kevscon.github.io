@@ -133,7 +133,7 @@ I wanted to investigate representative bridges nearby where I reside in Northern
 | 11375 | Loudon | 67.7 | 6 | Wood | Steel | Asphalt | Urban Local | not eligible | Open | Waterway |
 
 ![]({{ "/assets/images/bridge_ratings/bridge_locs.png" | absolute_url }})
-*Yellow pins indicate location of bridges in N. Virginia that are prone to poor future ratings.*
+*Markers indicate location of bridges in N. Virginia that are prone to poor future ratings.*
 
 These three bridges have below average initial Sufficiency Ratings, Superstructure Condition Ratings below 7, wooden decks, don't have concrete superstructures, do not have latex concrete wearing surfaces and are not over highways. All of these characteristics indicate a higher likelihood of receiving a poor rating in the future. In fact, two - 11283 and 06673 - had poor ratings in 2017. Bridge 11283 has an ADT value less than 300. Bridge 06673 located in Fairfax County is an Urban Collector that crosses Pohick Creek near I-95 and has a much higher ADT of almost 2,000. Let's take a look at this one with Google Earth...
 
