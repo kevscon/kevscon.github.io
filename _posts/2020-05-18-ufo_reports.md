@@ -3,6 +3,8 @@ layout: post
 title: UFO Reports
 ---
 
+![UFO]({{ "/assets/images/ufo-reports/ufo.jpg" | absolute_url }})
+
 ## Summary
 
 45,680 UFO sighting reports were collected from [NUFORC](http://www.nuforc.org/webreports.html) for the last decade (2010-2019).
