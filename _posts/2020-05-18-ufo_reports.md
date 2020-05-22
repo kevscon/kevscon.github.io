@@ -59,7 +59,10 @@ There are various shape descriptions for UFOs but the most common is "light".
 
 ![Shape]({{ "/assets/images/ufo-reports/shape.png" | absolute_url }})
 
+## Map App
+An application which shows a choropleth map by county of ufo sightings in the US can be found here:
 
+[UFO Sightings](https://ufo-reports-app.herokuapp.com/)
 
 Jupyter notebooks of my data processing and modeling for this project can be found here:
 
